@@ -66,13 +66,14 @@ const GpioPin gpio_periph_power = {.port = GPIOA, .pin = LL_GPIO_PIN_3};
 
 const GpioPin gpio_usb_dm = {.port = GPIOA, .pin = LL_GPIO_PIN_11};
 const GpioPin gpio_usb_dp = {.port = GPIOA, .pin = LL_GPIO_PIN_12};
-const GpioPin gpio_battery_vbus = { .port = GPIOA, .pin = LL_GPIO_PIN_2 };
+const GpioPin gpio_battery_vbus = {.port = GPIOA, .pin = LL_GPIO_PIN_2};
 const GpioPinRecord gpio_pins[] = {
-    // 5V: 1
     {.pin = &gpio_battery_vbus,
-     .name = "VBUS"
+     .name = "VBUS",
      .channel = FuriHalAdcChannel2,
-     
+     .number = 2,
+
+     .debug = false},
      .number = 2,
      .debug = false},
     {.pin = &gpio_ext_pa6,
