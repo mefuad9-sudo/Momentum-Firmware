@@ -44,8 +44,7 @@ const GpioPin gpio_ext_pc3 = {.port = GPIOC, .pin = LL_GPIO_PIN_3};
 const GpioPin gpio_ext_pb2 = {.port = GPIOB, .pin = LL_GPIO_PIN_2};
 const GpioPin gpio_ext_pb3 = {.port = GPIOB, .pin = LL_GPIO_PIN_3};
 const GpioPin gpio_ext_pa4 = {.port = GPIOA, .pin = LL_GPIO_PIN_4};
-const GpioPin gpio_ext_pa6 = {.port = GPIOA, .pin = LL_GPIO_PIN_6};
-const GpioPin gpio_ext_pa7 = {.port = GPIOA, .pin = LL_GPIO_PIN_7};
+const GpioPin gpio_usart_tx = { .port = GPIOB, .pin = LL_GPIO_PIN_6 };
 
 const GpioPin gpio_nfc_irq_rfid_pull = {.port = RFID_PULL_GPIO_Port, .pin = RFID_PULL_Pin};
 const GpioPin gpio_rfid_carrier_out = {.port = RFID_OUT_GPIO_Port, .pin = RFID_OUT_Pin};
@@ -67,13 +66,13 @@ const GpioPin gpio_periph_power = {.port = GPIOA, .pin = LL_GPIO_PIN_3};
 
 const GpioPin gpio_usb_dm = {.port = GPIOA, .pin = LL_GPIO_PIN_11};
 const GpioPin gpio_usb_dp = {.port = GPIOA, .pin = LL_GPIO_PIN_12};
-
+const GpioPin gpio_battery_vbus = { .port = GPIOA, .pin = LL_GPIO_PIN_2 };
 const GpioPinRecord gpio_pins[] = {
     // 5V: 1
-    {.pin = &gpio_ext_pa7,
-     .name = "PA7",
-     .channel = FuriHalAdcChannel12,
-     .pwm_output = FuriHalPwmOutputIdTim1PA7,
+    {.pin = &gpio_battery_vbus,
+     .name = "VBUS"
+     .channel = FuriHalAdcChannel2,
+     
      .number = 2,
      .debug = false},
     {.pin = &gpio_ext_pa6,
@@ -306,3 +305,4 @@ const GpioPinRecord* furi_hal_resources_pin_by_number(uint8_t number) {
     }
     return NULL;
 }
+
