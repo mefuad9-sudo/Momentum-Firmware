@@ -66,22 +66,14 @@ const GpioPin gpio_periph_power = {.port = GPIOA, .pin = LL_GPIO_PIN_3};
 
 const GpioPin gpio_usb_dm = {.port = GPIOA, .pin = LL_GPIO_PIN_11};
 const GpioPin gpio_usb_dp = {.port = GPIOA, .pin = LL_GPIO_PIN_12};
-const GpioPin gpio_battery_vbus = {.port = GPIOA, .pin = LL_GPIO_PIN_2};
+const GpioPin gpio_battery_vbus = { .port = GPIOA, .pin = LL_GPIO_PIN_2 };
 const GpioPinRecord gpio_pins[] = {
-    const GpioPinRecord gpio_pins[] = {
+    // 5V: 1
     {.pin = &gpio_battery_vbus,
-     .name = "VBUS",
+     .name = "VBUS"
      .channel = FuriHalAdcChannel2,
-     .number = 2,
-
-     .debug = false},
-    {.pin = &gpio_ext_pa6,
-     .name = "PA6",
-     .channel = FuriHalAdcChannel11,
-     .number = 3,
-     .debug = false},
-
-     .debug = false},
+     
+      
      .number = 2,
      .debug = false},
     {.pin = &gpio_ext_pa6,
@@ -125,12 +117,12 @@ const GpioPinRecord gpio_pins[] = {
      .number = 12,
      .debug = true},
     {.pin = &gpio_usart_tx,
-     .name = "B6",
+     .name = "PB6",
      .channel = FuriHalAdcChannelNone,
      .number = 13,
      .debug = true},
     {.pin = &gpio_usart_rx,
-     .name = "B7",
+     .name = "PB7",
      .channel = FuriHalAdcChannelNone,
      .number = 14,
      .debug = true},
@@ -314,4 +306,3 @@ const GpioPinRecord* furi_hal_resources_pin_by_number(uint8_t number) {
     }
     return NULL;
 }
-
