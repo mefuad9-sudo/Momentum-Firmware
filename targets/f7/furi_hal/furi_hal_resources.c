@@ -74,10 +74,7 @@ const GpioPinRecord gpio_pins[] = {
      .number = 2,
      .debug = false},
 
-    {.pin = &gpio_ext_pa6,
-     .name = "PA6",
-     .channel = FuriHalAdcChannel11,
-     .number = 3,
+     .number = 2,
      .debug = false},
     {.pin = &gpio_ext_pa6,
      .name = "PA6",
@@ -120,12 +117,12 @@ const GpioPinRecord gpio_pins[] = {
      .number = 12,
      .debug = true},
     {.pin = &gpio_usart_tx,
-     .name = "PB6",
+     .name = "B6",
      .channel = FuriHalAdcChannelNone,
      .number = 13,
      .debug = true},
     {.pin = &gpio_usart_rx,
-     .name = "PB7",
+     .name = "B7",
      .channel = FuriHalAdcChannelNone,
      .number = 14,
      .debug = true},
@@ -309,3 +306,4 @@ const GpioPinRecord* furi_hal_resources_pin_by_number(uint8_t number) {
     }
     return NULL;
 }
+
